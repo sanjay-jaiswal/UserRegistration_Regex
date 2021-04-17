@@ -5,16 +5,18 @@ using System.Text.RegularExpressions;
 
 namespace UserRegistration
 {
-    class PatternValidator
+    public class PatternValidator
     {
             static string NAME_PATTERN = "^[A-Z][a-z]{2,}$";
             static string EMAIL_PATTERN = "^[0-9a-zA-z]+([._+-][0-9a-zA-z]+)*@[a-zA-Z0-9]+.[a-zA-Z]{2,4}([.][a-zA-Z]{2})$";
+            static string MOBILE_PATTERN = "^[0-9]{2}[ ][0-9]{10}$";
 
             Regex regexName = new Regex(NAME_PATTERN);
             Regex regEmail = new Regex(EMAIL_PATTERN);
+            Regex regexMobile = new Regex(MOBILE_PATTERN); 
 
-            public void firstNameValidate(string firstName)
-            {
+             public void firstNameValidate(string firstName)
+             {
                 if (regexName.IsMatch(firstName))
                 {
                     Console.WriteLine("First name is valid.");
@@ -23,7 +25,7 @@ namespace UserRegistration
                 {
                     Console.WriteLine("LFirst name is invalid.");
                 }
-            }
+             }
             public void lastNameValidate(string lastName)
             {
                 if (regexName.IsMatch(lastName))
@@ -46,5 +48,17 @@ namespace UserRegistration
                     Console.WriteLine("Invalid Email Id.");
                 }
             }
+
+          public void mobileValidate(string mob)
+          {
+            if (regexMobile.IsMatch(mob))
+            {
+                Console.WriteLine("Mobile number is valid.");
+            }
+            else
+            {
+                Console.WriteLine("Mobile number is invalid.");
+            }
+          }
     }
 }
