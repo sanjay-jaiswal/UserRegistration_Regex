@@ -34,6 +34,10 @@ namespace UserRegistration
             Console.WriteLine("Enter your Password : ");
             string pass = Console.ReadLine();
             pv.passwordValidate(pass);
+
+            Console.WriteLine("Email samples validation : \n");
+            EmailSamples emailSamples = new EmailSamples();
+            emailSamples.emailValidate();
         }
     }
  }
