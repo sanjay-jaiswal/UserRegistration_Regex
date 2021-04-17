@@ -30,6 +30,10 @@ namespace UserRegistration
             Console.WriteLine("Enter your mobile number : ");
             string mobNo = Console.ReadLine();
             pv.mobileValidate(mobNo);
+
+            Console.WriteLine("Enter your Password : ");
+            string pass = Console.ReadLine();
+            pv.passwordValidate(pass);
         }
     }
  }

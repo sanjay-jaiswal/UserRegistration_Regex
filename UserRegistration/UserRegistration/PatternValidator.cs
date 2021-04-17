@@ -10,12 +10,14 @@ namespace UserRegistration
             static string NAME_PATTERN = "^[A-Z][a-z]{2,}$";
             static string EMAIL_PATTERN = "^[0-9a-zA-z]+([._+-][0-9a-zA-z]+)*@[a-zA-Z0-9]+.[a-zA-Z]{2,4}([.][a-zA-Z]{2})$";
             static string MOBILE_PATTERN = "^[0-9]{2}[ ][0-9]{10}$";
+            static string PASSWORD_PATTERN = "^[A-ZA-z]{8,}$";
 
             Regex regexName = new Regex(NAME_PATTERN);
             Regex regEmail = new Regex(EMAIL_PATTERN);
-            Regex regexMobile = new Regex(MOBILE_PATTERN); 
+            Regex regexMobile = new Regex(MOBILE_PATTERN);
+            Regex regPassword = new Regex(PASSWORD_PATTERN);
 
-             public void firstNameValidate(string firstName)
+        public void firstNameValidate(string firstName)
              {
                 if (regexName.IsMatch(firstName))
                 {
@@ -60,5 +62,16 @@ namespace UserRegistration
                 Console.WriteLine("Mobile number is invalid.");
             }
           }
+        public void passwordValidate(string passw)
+        {
+            if (regPassword.IsMatch(passw))
+            {
+                Console.WriteLine("Password is valid.");
+            }
+            else
+            {
+                Console.WriteLine("Password is invalid.");
+            }
+        }
     }
 }
